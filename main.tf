@@ -14,8 +14,8 @@ provider "azurerm" {
 
 # Resource Group
 resource "azurerm_resource_group" "rg" {
-  name     = var.resource_group_name
-  location = var.location
+  name     = "rg-group5-sch"
+  location = "swedencentral"
 }
 
 # Virtual Network
@@ -62,8 +62,8 @@ resource "azurerm_windows_virtual_machine" "vm" {
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   size                = "Standard_B2s"
-  admin_username      = var.admin_username
-  admin_password      = var.admin_password
+  admin_username      = "adminuser"
+  admin_password      = "Password123$$"
   network_interface_ids = [
     azurerm_network_interface.nic.id,
   ]
