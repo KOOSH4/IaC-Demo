@@ -48,6 +48,5 @@ jobs:
           ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           ARM_USE_OIDC: true
-          TF_VAR_admin_username: ${{ secrets.AZURE_ADMIN_USERNAME }}
-          TF_VAR_admin_password: ${{ secrets.AZURE_ADMIN_PASSWORD }}
+
         run: terraform destroy -auto-approve
