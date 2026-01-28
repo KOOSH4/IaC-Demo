@@ -9,16 +9,13 @@ terraform {
 
 provider "azurerm" {
   features {}
-  use_oidc        = true
-  subscription_id = var.subscription_id
-  client_id       = var.client_id
-  tenant_id       = var.tenant_id
+  use_oidc = true
 }
 
 # Resource Group
 resource "azurerm_resource_group" "rg" {
-  name     = "rg-terraform-demo"
-  location = "West Europe"
+  name     = var.resource_group_name
+  location = var.location
 }
 
 # Virtual Network
@@ -65,8 +62,8 @@ resource "azurerm_windows_virtual_machine" "vm" {
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   size                = "Standard_B2s"
-  admin_username      = "adminuser"
-  admin_password      = "P@ssw0rd1234!" # Ideally this should be a variable, but hardcoding for simplicity of the specific demo
+  admin_username      = var.admin_username
+  admin_password      = var.admin_password
   network_interface_ids = [
     azurerm_network_interface.nic.id,
   ]

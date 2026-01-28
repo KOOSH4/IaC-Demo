@@ -14,19 +14,14 @@ variable "resource_group_name" {
   default     = "rg-group5-sch"
 }
 
-variable "subscription_id" {
-  description = "Azure subscription ID."
-  type        = string
-}
-
-variable "client_id" {
-  description = "Client ID for authentication."
+variable "admin_username" {
+  description = "Admin username for the VM."
   type        = string
   sensitive   = true
 }
 
-variable "tenant_id" {
-  description = "Azure tenant ID."
+variable "admin_password" {
+  description = "Admin password for the VM."
   type        = string
   sensitive   = true
 }
