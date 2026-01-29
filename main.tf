@@ -12,7 +12,7 @@ provider "azurerm" {
   use_oidc = true
 }
 
-# Resource Groups
+# Resource Group
 resource "azurerm_resource_group" "rg" {
   name     = "rg-fraUas-IaC-Demo"
   location = "germanywestcentral"
@@ -57,7 +57,7 @@ resource "azurerm_network_interface" "nic" {
   }
 }
 
-# Windows Virtual Machine
+# Windows Virtual Machine test
 resource "azurerm_windows_virtual_machine" "vm" {
   name                = "vm-demo"
   resource_group_name = azurerm_resource_group.rg.name
