@@ -12,7 +12,7 @@ provider "azurerm" {
   use_oidc = true
 }
 
-# Resource Group
+# Resource Groups
 resource "azurerm_resource_group" "rg" {
   name     = "rg-fraUas-IaC-Demo"
   location = "germanywestcentral"
